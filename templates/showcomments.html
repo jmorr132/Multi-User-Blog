@@ -1,0 +1,9 @@
+{% extends "permalink.html" %}
+
+{% block comments %}
+{% for comment in comments %}
+    {{ comment.render_comment(login_id) | safe }}
+    <br><br>
+  {% endfor %}
+
+{% endblock comments %}

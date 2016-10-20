@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="" method="post" id="SignUpForm">
+        <fieldset class="accountInfo">
+            <legend>User Sign In</legend>
+            <p><label for="Username">User Name </label>
+                <input type="text" name ="username" value = "{{username}}" placeholder="Required"><span class="error">{{error_username}}</span>
+            </p>
+            <p><label for="password">Password</label>
+                <input type="password" name="password" value="" placeholder="Required"><span class="error">{{error_password}}</span>
+            </p>
+         </fieldset>
+         <fieldset class="accountAction">
+             <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+         </fieldset>
+    </form>
+{% endblock content %}

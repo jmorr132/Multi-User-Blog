@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="" method="post" id="BlogPostForm">
+        <fieldset class="postForm">
+            <legend>Add New Comment</legend>
+            <span class="error">{{error}}</span>
+            <input class="postid" type="hidden" name="post_id" value="{{post_id}}">
+            <p>
+                <label for="subject">Title</label>
+                <input class="postSubject" type="text" name="subject" value="{{subject}}">
+            </p>
+            <p>
+                <label for="content">Content</label>
+                <textarea class="postContent" name="content">{{content}}</textarea>
+            </p>
+        </fieldset>
+        <fieldset class="accountAction">
+            <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+            <input Type="button" class="btn btn-primary" name="cancel" value="Cancel" onClick="history.go(-1);return true;">
+        </fieldset>
+    </form>
+{% endblock %}
