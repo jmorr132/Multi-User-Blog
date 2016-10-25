@@ -204,7 +204,7 @@ class Comment(db.Model):
 
         def render_comment(self, login_id):
             self._render_text=self.content.replace('\n', '<br>')
-            return render_str('comment.html', login_id,
+            return render_str('comment.html', login_id=login_id,
                             comment = self)
 
 class User(db.Model):
@@ -237,7 +237,7 @@ class MainPage(TemplateHandler, UserAuthentication):
                 like_post_id = self.request.get('like_post_id')
                 if comment_post_id:
                     post_id = comment_post_id
-                    self.redirect('/newcomment?post_id' + post_id)
+                    self.redirect('/newcomment?post_id=' + post_id)
                 if edit_post_id:
                     post_id = edit_post_id
                     self.redirect('/editpost?post_id=' + post_id)
